@@ -1,0 +1,28 @@
+.navbar {
+    font-size: 40px;
+    justify-content: center;
+}
+
+#display {
+    background-color: white;
+}
+
+.navbar-brand {
+    font-size: 40px;
+}
+
+h1{
+    font-size: 30px;
+}
+
+body {
+    background-image: url("../images/crossline-dots/crossline-dots.png");
+    background-repeat: repeat;
+    background-attachment: fixed;
+    margin: 0;
+}
+
+#display {
+    height: 150px;
+    width: 100%;
+}
