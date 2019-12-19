@@ -18,49 +18,68 @@ var questionsArray = [
   {
     question:
       "Which built-in method adds one or more elements to the end of an array and returns the new length of the array?",
-    choices: ["last()", "put()", "push()", "var()"],
+    optionone: "last()",
+    optiontwo: "put()",
+    optionthree: "push()",
+    optionfour: "var()",
     correctAnswer: "push()"
   },
   {
     question: "Which of these values can a boolean variable contain?",
-    choices: ["True & False", "0 & 1", "Any integer value", "True"],
+    optionone: "True & False",
+    optiontwo: "0 & 1",
+    optionthree: "Any integer value",
+    optionfour: "True",
     correctAnswer: "True & False"
   },
   {
     question: "Inside which HTML element do we put the JavaScript?",
-    choices: ["<javascript", "<script>", "<scripting", "<js"],
+    optionone: "<javascript>",
+    optiontwo: "<script>",
+    optionthree: "<scripting>",
+    optionfour: "<js>",
     correctAnswer: "<script>"
   },
   {
     question: "How would you write an IF statement in JavaScript?",
-    choices: ["if (i == 5)", "if i == 5 then", "if i = 5 then", "if i = 5"],
+    optionone: "if (i == 5)",
+    optiontwo: "if i == 5 then",
+    optionthree: "if i = 5 then",
+    optionfour: "if i = 5",
     correctAnswer: "if (i == 5)"
   },
   {
     question:
       "How would you write an IF statement for executing some code if 'i' is NOT equal to 5?",
-    choices: ["if (i<> 5)", "if i <> 5", "if i =! 5 then", "if (i != 5)"],
+    optionone: "if (i<> 5)",
+    optiontwo: "if i <> 5",
+    optionthree: "if i =! 5 then",
+    optionfour: "if (i != 5)",
     correctAnswer: "if (i != 5)"
   },
   {
     question: "How would you start a FOR loop?",
-    choices: [
-      "for i = 1 to 5",
-      "for (i = 0; i<= 5; i++)",
-      "for (i <= 5; i++)",
-      "for (i = 0; i<= 5)"
-    ],
+    optionone: "for i = 1 to 5",
+    optiontwo: "for (i = 0; i<= 5; i++)",
+    optionthree: "for (i <= 5; i++)",
+    optionfour: "for (i = 0; i<= 5)",
     correctAnswer: "for (i = 0; i <= 5; i++)"
   },
   {
     question:
       "What is the correct method of rounding the number 7.25 to the nearest integer?",
-    choices: ["round(7.25)", "Math.rnd(7.25)", "rnd(7.25)", "Math.round(7.25)"],
+    optionone: "round(7.25)",
+    optiontwo: "Math.rnd(7.25)",
+    optionthree: "rnd(7.25)",
+    optionfour: "Math.round(7.25)",
     correctAnswer: "Math.round(7.25)"
   },
   {
     question: "Which event occurs when the user clicks on an HTML element?",
-    choices: ["onchange", "onmouseclick", "onclick", "onmouseover"],
+    optionone: "onchange",
+    optiontwo: "onmouseclick",
+    optionthree: "onclick",
+    optionfour: "onmouseover",
     correctAnswer: "onclick"
   }
 ];
