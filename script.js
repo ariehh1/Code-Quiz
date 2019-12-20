@@ -1,6 +1,7 @@
 $(document).ready(function() {
   // variables
-  var questionsArray = [];
+  //   var questionsArray = [];
+  //   console.log(questionsArray);
   var questionCounter = 0;
   var score = 0;
   var sec = 75;
@@ -12,11 +13,13 @@ $(document).ready(function() {
   var warningIcon =
     "https://www.puntosud.org/wp-content/uploads/2018/06/warning-icon-300x275.png";
 
+  //start timer with 1 second delay
   let questionsCount = questionsArray.length;
-
+  console.log(questionsArray[questionCounter].optionone);
+  var time;
   function startButton() {
-    var time = setInterval(myTimer, 1000);
-    $(".end-section").hide();
+    time = setInterval(myTimer, 1000);
+    // $(".end-section").hide();
     $(".progress-section").hide();
     $(".quiz-box").hide();
     $(".feedback-section").hide();
@@ -26,14 +29,14 @@ $(document).ready(function() {
   }
 
   function handleStartClick() {
-    $(".js-start-button").on("click", function(event) {
-      console.log("handleStartClick() ran");
-      $(".progress-section").show();
-      $(".start-section").hide();
-      $(".end-section").hide();
-      $(".quiz-box").fadeIn("slow");
-      renderQuizBox();
-    });
+    // $(".start-button").on("click", function(event) {
+    console.log("handleStartClick() ran");
+    $(".progress-section").show();
+    $(".start-section").hide();
+    $(".end-section").hide();
+    // $(".quiz-box").fadeIn("slow");
+    renderQuizBox();
+    // });
   }
 
   // This function displays the quiz box with the question, options, score and question count.
@@ -54,9 +57,7 @@ $(document).ready(function() {
   // This function renders a new question.
   function renderQuestion() {
     $(".questions-form p").text(questionsArray[questionCounter].question);
-    $(".questions-form #option-one").val(
-      questionsArray[questionCounter].optionone
-    );
+    $("#option-one").text(questionsArray[questionCounter].optionone);
     $(".questions-form #option-two").val(
       questionsArray[questionCounter].optiontwo
     );
@@ -185,11 +186,11 @@ $(document).ready(function() {
   //timer
 
   function myTimer() {
-    sec--;
     document.getElementById("timer").innerHTML = sec + "sec left";
+    sec--;
 
     if (sec === 0) {
-      // clearInterval(time);
+      clearInterval(time);
       alert("Time out!!!");
     }
   }
