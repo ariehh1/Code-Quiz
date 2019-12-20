@@ -61,17 +61,7 @@ $(document).ready(function() {
     $("#option-two").text(questionsArray[questionCounter].optiontwo);
     $("#option-three").text(questionsArray[questionCounter].optionthree);
     $("#option-four").text(questionsArray[questionCounter].optionfour);
-
-    $(".questions-form #option-two").val(
-      questionsArray[questionCounter].optiontwo
-    );
-    $(".questions-form #option-three").val(
-      questionsArray[questionCounter].optionthree
-    );
-    $(".questions-form #option-four").val(
-      questionsArray[questionCounter].optionfour
-    );
-
+    questionCounter++;
     $(".questions-form #option-one")
       .next()
       .text(questionsArray[questionCounter].optionone);
@@ -103,7 +93,6 @@ $(document).ready(function() {
   // Checks whether the answer selected by the user is correct or not.
   function checkAnswer(selected) {
     let rightAnswer = questionsArray[questionCounter].correctAnswer;
-
     if (selected === rightAnswer) {
       score++;
       displayPopup(true, rightAnswer);
