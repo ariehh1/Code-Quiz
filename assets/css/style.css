@@ -68,7 +68,7 @@ header {
   border: none;
   font-size: 18px;
   font-weight: bold;
-  color: #006600;
+  color: white;
   padding: 10px 15px;
 }
 .start-button:hover {
@@ -126,6 +126,8 @@ header {
   padding: 5px;
   margin: 0 auto;
   display: block;
+  background-color: lime;
+  color: white;
 }
 .feedback-section {
   height: 100%;
