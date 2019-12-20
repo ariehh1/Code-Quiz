@@ -58,6 +58,10 @@ $(document).ready(function() {
   function renderQuestion() {
     $(".questions-form p").text(questionsArray[questionCounter].question);
     $("#option-one").text(questionsArray[questionCounter].optionone);
+    $("#option-two").text(questionsArray[questionCounter].optiontwo);
+    $("#option-three").text(questionsArray[questionCounter].optionthree);
+    $("#option-four").text(questionsArray[questionCounter].optionfour);
+
     $(".questions-form #option-two").val(
       questionsArray[questionCounter].optiontwo
     );
