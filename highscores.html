@@ -5,25 +5,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Congrats!</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Highscores</title>
 </head>
 
 <body>
-    <div class="container">
-        <div id="end" class="flex-center flex-column">
-            <h1 id="finalScore"></h1>
-            <form>
-                <input type="text" name="username" id="username" placeholder="username" />
-                <button type="submit" class="btn" id="saveScoreBtn" onclick="saveHighScore(event)" disabled>
-                    Save
-                </button>
-            </form>
-            <a class="btn" href="/game.html">Play Again</a>
-            <a class="btn" href="/">Go Home</a>
-        </div>
+    <div class="highscores">
+        <form id="highscore-form" method="POST">
+            <label for="highscore-text">Add Your Highscore:</label>
+            <input type="text" placeholder="highscore and initials" name="highscore-text" id="hs-text" />
+        </form>
+        <p>Highscore Count: <span id="highscore-count">0</span></p>
+        <ul id="highscore-list"></ul>
     </div>
-    <script src="end.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
