@@ -4,7 +4,7 @@ $(document).ready(function() {
   //   console.log(questionsArray);
   var questionCounter = 0;
   var score = 0;
-  var sec = 75;
+  var sec = 70;
   var startButtonElement = document.getElementById("start");
   //var correctAnswerIcon =
   //"https://clipartstation.com/wp-content/uploads/2018/09/correct-answer-clipart-1.png";
@@ -141,13 +141,13 @@ $(document).ready(function() {
   // }
 
   //This function displays the final score once the quiz is completed.
-  function displayFinalScore() {
-    $(".end-section").fadeIn(1000);
-    $(".end-section h4").text(`Your Score is: ${score}/${questionsCount}`);
-    $(".correct .count").text(score);
-    $(".wrong .count").text(questionsCount - score);
-    resetQuiz();
-  }
+  // function displayFinalScore() {
+  //   $(".end-section").fadeIn(1000);
+  //   $(".end-section h4").text(`Your Score is: ${score}/${questionsCount}`);
+  //   $(".correct .count").text(score);
+  //   $(".wrong .count").text(questionsCount - score);
+  //   resetQuiz();
+  // }
 
   //This function resets the questions and score.
   function resetQuiz() {
@@ -189,87 +189,28 @@ $(document).ready(function() {
 });
 
 // local storage of highscores
-var highscoreInput = document.querySelector("#highscore-text");
 var highscoreForm = document.querySelector("#highscore-form");
+var highscoreText = document.querySelector("#highscore-text");
 var highscoreList = document.querySelector("#highscore-list");
-var highscoreCountSpan = document.querySelector("#highscore-count");
 
-var highscores = [];
+highscoreForm.addEventListener(
+  "submit",
+  function(event) {
+    event.preventDefault();
 
-init();
+    if (highscoreText.value.length < 1) return;
 
-function init() {
-  // Get stored highscores from localStorage
-  // Parsing the JSON string to an object
-  var storedHighscores = JSON.parse(localStorage.getItem("highscores"));
+    highscoreList.innerHTML += "<ol>" + highscoreText.value + "</ol>";
 
-  // If highscores were retrieved from localStorage, update the highscores array to it
-  if (storedHighscores !== null) {
-    highscores = storedHighscores;
-  }
+    highscoreText.value = "";
 
-  // Render highscores to the DOM
-  renderHighscores();
+    localStorage.setItem("highscoreText", highscoreList.innerHTML);
+  },
+  false
+);
+
+var saved = localStorage.getItem("highscoreText");
+
+if (saved) {
+  highscoreList.innerHTML = saved;
 }
-
-function renderHighscores() {
-  // Clear highscoreList element and update highscoreCountSpan
-  highscoreList.innerHTML = "";
-  highscoreCountSpan.textContent = highscores.length;
-
-  // Render a new li for each highscore
-  for (var i = 0; i < highscores.length; ++i) {
-    var highscores = highscores[i];
-
-    var li = document.createElement("li");
-    li.textContent = highscores;
-    li.setAttribute("data-index", i);
-
-    var button = document.createElement("button");
-    button.textContent = "Complete";
-
-    li.appendChild(button);
-    highscoresList.appendChild(li);
-  }
-}
-
-function storeTodos() {
-  // Stringify and set 'highscores' key in localStorage to highscores array
-  localStorage.setItem("highscores", JSON.stringify(highscores));
-}
-
-// When form is submitted...
-highscoresForm.addEventListener("submit", function(event) {
-  event.preventDefault();
-
-  var highscoresText = highscoresInput.value.trim();
-
-  // Return from function early if submitted highscoresText is blank
-  if (highscoresText === "") {
-    return;
-  }
-
-  // Add new highscoresText to todos array, clear the input
-  highscores.push(highscoresText);
-  highscoresInput.value = "";
-
-  // Store updated highscores in localStorage, re-render the list
-  storeHighscores();
-  renderHighscores();
-});
-
-// When a element inside of the highscoresList is clicked...
-highscoresList.addEventListener("click", function(event) {
-  var element = event.target;
-
-  // If that element is a button...
-  if (element.matches("button")) {
-    // Get its data-index value and remove the highscores element from the list
-    var index = element.parentElement.getAttribute("data-index");
-    highscores.splice(index, 1);
-
-    // Store updated highscores in localStorage, re-render the list
-    storeHighscores();
-    renderHighscores();
-  }
-});
