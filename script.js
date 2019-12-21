@@ -78,30 +78,23 @@ $(document).ready(function() {
     $(".questions-form #option-four")
       .next()
       .text(questionsArray[questionCounter].optionfour);
-  }
 
-  function handleSubmitAnswer() {
-    $(".js-submit-button").on("click", function(event) {
-      console.log("handleSubmitAnswer() ran");
-      let selectedOption = $("input[type=radio]:checked").val();
-      if (selectedOption === undefined) {
-        displayPopup(false, selectedOption);
-      } else {
-        //reset radio button
-        $("input[type=radio]:checked").attr("checked", false);
-        checkAnswer(selectedOption);
-      }
+    $(".options").on("click", function() {
+      console.log($(this).text());
+      var userChoice = $(this).text();
+      checkAnswer(userChoice);
     });
   }
-
   // Checks whether the answer selected by the user is correct or not.
   function checkAnswer(selected) {
     let rightAnswer = questionsArray[questionCounter].correctAnswer;
     if (selected === rightAnswer) {
       score++;
-      displayPopup(true, rightAnswer);
+      //displayPopup(true, rightAnswer);
+      console.log("rightAnswer");
     } else {
-      displayPopup(false, rightAnswer);
+      //displayPopup(false, rightAnswer);
+      console.log("incorrectAnswer");
     }
   }
 
