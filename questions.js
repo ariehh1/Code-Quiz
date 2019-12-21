@@ -59,7 +59,7 @@ var questionsArray = [
   },
   {
     question: "How would you start a FOR loop?",
-    optionone: "for i = 1 to 5",
+    optionone: "for i = 1 to hell",
     optiontwo: "for (i = 0; i<= 5; i++)",
     optionthree: "for (i <= 5; i++)",
     optionfour: "for (i = 0; i<= 5)",

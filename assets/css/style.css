@@ -108,6 +108,8 @@ header {
 
 .questions-form p {
   font-size: 18px;
+  display: flex;
+  justify-content: center;
 }
 .options {
   display: block;
@@ -116,6 +118,8 @@ header {
   margin: 10px;
   padding: 5px;
   font-size: 16px;
+  display: flex;
+  justify-content: center;
 }
 
 .submit-button {
@@ -162,7 +166,7 @@ header {
   padding: 0px;
   font-size: 20px;
 }
-.popup-box img {
+/* .popup-box img {
   height: 150px;
   width: 150px;
   display: block;
@@ -175,121 +179,29 @@ header {
   height: 35px;
   width: 35px;
   margin: 10px;
-  vertical-align: middle;
-}
+  vertical-align: middle; */
+
 .count {
   font-size: 20px;
 }
-.startover-button {
+/* .startover-button {
   margin-top: 15px;
   font-size: 15px;
   padding: 10px;
   border: none;
   border-radius: 10px;
   box-shadow: 0 3px #27496d;
-}
+} */
 
 #timer {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 3px;
+  right: 3px;
   color: red;
 }
 
-#highScoresList {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 4rem;
-}
-
-.high-score {
-  font-size: 2.8rem;
-  margin-bottom: 0.5rem;
-}
-
-.high-score:hover {
-  transform: scale(1.025);
-}
-
-.choice-container {
+.main-start {
   display: flex;
-  margin-bottom: 0.5rem;
-  width: 100%;
-  font-size: 1.8rem;
-  border: 0.1rem solid rgb(86, 165, 235, 0.25);
-  background-color: white;
-}
-
-.choice-container:hover {
-  cursor: pointer;
-  box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
-  transform: translateY(-0.1rem);
-  transition: transform 150ms;
-}
-
-.choice-prefix {
-  padding: 1.5rem 2.5rem;
-  background-color: #56a5eb;
-  color: white;
-}
-
-.choice-text {
-  padding: 1.5rem;
-  width: 100%;
-}
-
-.correct {
-  background-color: #28a745;
-}
-
-.incorrect {
-  background-color: #dc3545;
-}
-
-/* HUD */
-
-#hud {
-  display: flex;
-  justify-content: space-between;
-}
-
-.hud-prefix {
-  text-align: center;
-  font-size: 2rem;
-}
-
-.hud-main-text {
-  text-align: center;
-}
-
-#progressBar {
-  width: 20rem;
-  height: 4rem;
-  border: 0.3rem solid #56a5eb;
-  margin-top: 1.5rem;
-}
-
-#progressBarFull {
-  height: 3.4rem;
-  background-color: #56a5eb;
-  width: 0%;
-}
-
-/* LOADER */
-#loader {
-  border: 1.6rem solid white;
-  border-radius: 50%;
-  border-top: 1.6rem solid #56a5eb;
-  width: 12rem;
-  height: 12rem;
-  animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  justify-content: center;
+  font-size: 40px;
 }
