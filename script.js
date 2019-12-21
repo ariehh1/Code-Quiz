@@ -54,6 +54,10 @@ $(document).ready(function() {
     );
   }
 
+  $(".questions-form").on("click", function() {
+    questionCounter++;
+    renderQuestion();
+  });
   // This function renders a new question.
   function renderQuestion() {
     $(".questions-form p").text(questionsArray[questionCounter].question);
@@ -61,7 +65,7 @@ $(document).ready(function() {
     $("#option-two").text(questionsArray[questionCounter].optiontwo);
     $("#option-three").text(questionsArray[questionCounter].optionthree);
     $("#option-four").text(questionsArray[questionCounter].optionfour);
-    questionCounter++;
+
     $(".questions-form #option-one")
       .next()
       .text(questionsArray[questionCounter].optionone);
