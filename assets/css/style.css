@@ -216,3 +216,8 @@ header {
 .hidden {
   display: none;
 }
+
+.mr-auto {
+  display: flex;
+  justify-content: center;
+}
