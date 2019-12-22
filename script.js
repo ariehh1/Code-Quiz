@@ -70,6 +70,9 @@ $(document).ready(function() {
       console.log("rightAnswer");
       var toast = document.getElementsByClassName("toast")[0];
       toast.classList.remove("hidden");
+      $(document).ready(function(correctAnswer) {
+        $(".toast").toast("show");
+      });
     } else {
       //displayPopup(false, rightAnswer);
       console.log("incorrectAnswer");
