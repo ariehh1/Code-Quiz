@@ -124,13 +124,14 @@ header {
 
 .submit-button {
   border-radius: 10px;
-  font-size: 15px;
+  font-size: 100px;
   padding: 5px;
   margin: 0 auto;
   display: block;
   background-color: lime;
   color: white;
 }
+
 .feedback-section {
   height: 100%;
   width: 100%;
@@ -195,8 +196,8 @@ header {
 
 #timer {
   position: absolute;
-  top: 3px;
-  right: 3px;
+  top: 1px;
+  right: 1px;
   color: red;
 }
 
@@ -204,4 +205,10 @@ header {
   display: flex;
   justify-content: center;
   font-size: 40px;
+}
+
+#highscores-form {
+  font-size: 35px;
+  display: flex;
+  justify-content: center;
 }

@@ -59,9 +59,7 @@ $(document).ready(function() {
     }
   }
 
-  function endGame() {
-    alert("Game Over");
-  }
+  function endGame() {}
 
   // Checks whether the answer selected by the user is correct or not.
   function checkAnswer(selected) {
@@ -112,32 +110,31 @@ $(document).ready(function() {
     }
   }
 
-  startButtonElement.onclick = init;
+  if (startButtonElement) {
+    startButtonElement.onclick = init;
+  } else {
+    // local storage of highscores
+    var highscoreForm = document.querySelector("#highscores-form");
+    var highscoreText = document.querySelector("#highscore-count");
+    var highscoreList = document.querySelector("#highscore-list");
 
-  // local storage of highscores
-  var highscoreForm = document.querySelector("#highscore-form");
-  var highscoreText = document.querySelector("#highscore-text");
-  var highscoreList = document.querySelector("#highscore-list");
-
-  // highscoreForm.addEventListener(
-  "submit",
-    function(event) {
+    highscoreForm.addEventListener("submit", function(event) {
       event.preventDefault();
 
-      if (highscoreText.value.length < 1) return;
+      if (highscoreText.textContent.length < 1) return;
 
-      highscoreList.innerHTML += "<ol>" + highscoreText.value + "</ol>";
+      highscoreList.innerHTML += "<ol>" + highscoreText.textContent + "</ol>";
 
-      highscoreText.value = "";
+      highscoreText.textContent = "";
 
       localStorage.setItem("highscoreText", highscoreList.innerHTML);
-    },
-    false;
 
-  var saved = localStorage.getItem("highscoreText");
+      var saved = localStorage.getItem("highscoreText");
 
-  if (saved) {
-    highscoreList.innerHTML = saved;
+      if (saved) {
+        highscoreList.innerHTML = saved;
+      }
+    });
   }
 
   $(".options").on("click", clickButton);
