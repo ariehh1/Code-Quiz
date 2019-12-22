@@ -68,9 +68,13 @@ $(document).ready(function() {
       score++;
       //displayPopup(true, rightAnswer);
       console.log("rightAnswer");
+      var toast = document.getElementsByClassName("toast")[0];
+      toast.classList.remove("hidden");
     } else {
       //displayPopup(false, rightAnswer);
       console.log("incorrectAnswer");
+      sec -= 10;
+      document.getElementById("timer").innerHTML = sec + "sec left";
     }
   }
 
